@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+overflow:hidden;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff8fc4,#ff5ca8,#ff9ad5);
+color:white;
+}
+
+.container{
+text-align:center;
+z-index:5;
+}
+
+h1{
+font-size:45px;
+animation:pulse 2s infinite;
+}
+
+h2{
+margin-top:10px;
+font-size:25px;
+}
+
+.cake{
+position:relative;
+margin:40px auto;
+width:220px;
+}
+
+.layer1{
+width:220px;
+height:60px;
+background:#ff84a8;
+border-radius:12px;
+}
+
+.layer2{
+width:170px;
+height:55px;
+background:#ff9dc2;
+margin:auto;
+margin-top:-8px;
+border-radius:12px;
+}
+
+.layer3{
+width:120px;
+height:50px;
+background:#ffc6dc;
+margin:auto;
+margin-top:-8px;
+border-radius:12px;
+}
+
+.candle{
+width:10px;
+height:45px;
+background:white;
+margin:auto;
+position:relative;
+}
+
+.flame{
+width:18px;
+height:18px;
+background:gold;
+border-radius:50%;
+position:absolute;
+left:-4px;
+top:-15px;
+box-shadow:0 0 20px yellow;
+animation:flicker .4s infinite alternate;
+}
+
+button{
+margin-top:30px;
+padding:15px 35px;
+font-size:18px;
+border:none;
+border-radius:50px;
+cursor:pointer;
+background:white;
+color:#ff3b88;
+font-weight:bold;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+#letter{
+display:none;
+margin-top:25px;
+background:rgba(255,255,255,.15);
+padding:20px;
+border-radius:20px;
+max-width:500px;
+animation:fade .8s;
+}
+
+.heart{
+position:absolute;
+font-size:24px;
+animation:fall linear forwards;
+}
+
+.balloon{
+position:absolute;
+font-size:45px;
+animation:float 10s linear infinite;
+}
+
+.star{
+position:absolute;
+color:white;
+animation:blink 2s infinite;
+}
+
+@keyframes pulse{
+from{transform:scale(1);}
+to{transform:scale(1.08);}
+}
+
+@keyframes flicker{
+from{transform:scale(1);}
+to{transform:scale(.8);}
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-100px);
+}
+100%{
+transform:translateY(110vh);
+}
+}
+
+@keyframes float{
+0%{
+transform:translateY(120vh);
+}
+100%{
+transform:translateY(-150px);
+}
+}
+
+@keyframes blink{
+50%{
+opacity:.2;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎂 Happy Birthday 🎂</h1>
+
+<h2>Untuk <b>Nama Pacar ❤️</b></h2>
+
+<div class="cake">
+
+<div class="candle">
+<div class="flame"></div>
+</div>
+
+<div class="layer3"></div>
+<div class="layer2"></div>
+<div class="layer1"></div>
+
+</div>
+
+<button onclick="openGift()">
+🎁 Buka Hadiah
+</button>
+
+<div id="letter">
+
+<h2>💌 Surat Untukmu</h2>
+
+<p>
+
+Selamat ulang tahun, sayangku ❤️
+
+Semoga kamu selalu sehat,
+bahagia, panjang umur,
+dan semua impianmu menjadi kenyataan.
+
+Terima kasih sudah hadir
+di hidupku.
+
+Semoga kita bisa terus
+bersama sampai tua nanti.
+
+Aku sayang kamu
+lebih dari apa pun.
+
+❤️❤️❤️
+
+I Love You Forever.
+
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+for(let i=0;i<25;i++){
+
+let star=document.createElement("div");
+star.className="star";
+star.innerHTML="⭐";
+star.style.left=Math.random()*100+"vw";
+star.style.top=Math.random()*100+"vh";
+star.style.fontSize=(10+Math.random()*20)+"px";
+document.body.appendChild(star);
+
+}
+
+for(let i=0;i<8;i++){
+
+let b=document.createElement("div");
+b.className="balloon";
+b.innerHTML=["🎈","🎈","🎈"][Math.floor(Math.random()*3)];
+b.style.left=Math.random()*100+"vw";
+b.style.animationDuration=(8+Math.random()*6)+"s";
+document.body.appendChild(b);
+
+}
+
+function openGift()
+
+const popup = [
+
+"🎁 Tunggu sebentar yaa...",
+"🤭 Yakin mau dibuka?",
+"❤️ Hadiah ini dibuat khusus buat kamu.",
+"🥰 Makasih ya udah selalu ada buat aku.",
+"🎂 Selamat bertambah umur, sayang!",
+"✨ Semoga semua impian kamu tercapai.",
+"💖 Semoga kita selalu bersama.",
+"🤍 Jangan pernah tinggalin aku ya.",
+"😘 Sekarang... siap menerima hadiahnya?",
+"🎉 SELAMAT ULANG TAHUN SAYANG ❤️"
+
+];
+
+let index = 0;
+
+function tampilPopup(){
+
+if(index < popup.length){
+
+alert(popup[index]);
+index++;
+
+setTimeout(tampilPopup,300);
+
+}else{
+
+document.getElementById("letter").style.display="block";
+
+for(let j=0;j<120;j++){
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML=["❤️","💕","💖","💗","💘"][Math.floor(Math.random()*5)];
+
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=(3+Math.random()*4)+"s";
+h.style.fontSize=(20+Math.random()*20)+"px";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{
+h.remove();
+},7000);
+
+}
+
+}
+
+}
+
+tampilPopup();
+
+}
